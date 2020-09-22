@@ -10,7 +10,7 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/OdeToFood/OdeToFood/bin/Debug/netcoreapp2.1/OdeToFood.dll",
+            "program": "${workspaceFolder}/OdeToFood/OdeToFood/bin/Debug/netcoreapp3.1/OdeToFood.dll",
             "args": [],
             "cwd": "${workspaceFolder}/OdeToFood/OdeToFood",
             "stopAtEntry": false,
