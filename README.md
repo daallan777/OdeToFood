@@ -3,6 +3,91 @@ A repo for the ASP.NET Core Pluralsight Project.
 
 The following are additional notes and FAQs about the course. 
 
+## Quck start
+
+Follow the steps below to quickly get this app running on your Linux Workstation. 
+
+### Setup SQLServer
+
+```bash
+podman pull mcr.microsoft.com/mssql/server:2019-latest
+podman run -dt --name sqlserver -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=myPassw0rd' -p 1433:1433/tcp mcr.microsoft.com/mssql/server
+```
+
+### Run Application
+
+```bash
+git clone https://github.com/snowjet/OdeToFood.git OdeToFood
+cd OdeToFood/OdeToFood/OdeToFood
+
+npm install
+
+dotnet build
+dotnet run
+```
+
+### Programatically Test Application
+
+**Check if DB has entries**
+```bash
+curl -s -k https://localhost:5001/api/Restaurants/ | python -m json.tool
+[]
+```
+
+**Add 3 Resteraunts**
+```bash
+-X POST -H 'Content-type: application/json' -d '{"name":"Cheap and Cheerful","location":"Sydney","cuisine":1}'  https://localhost:5001/api/Restaurants | python -m json.tool
+{
+    "id": 1,
+    "name": "Cheap and Cheerful",
+    "location": "Sydney",
+    "cuisine": 1
+}
+
+curl -s -k -X POST -H 'Content-type: application/json' -d '{"name":"Hot and Spicey","location":"Melbourne","cuisine":3}'  https://localhost:5001/api/Restaurants | python -m json.tool
+{
+    "id": 2,
+    "name": "Hot and Spicey",
+    "location": "Melbourne",
+    "cuisine": 3
+}
+
+curl -s -k -X POST -H 'Content-type: application/json' -d '{"name":"Yarrakebas","location":"Canberra","cuisine":3}'  https://localhost:5001/api/Restaurants | python -m json.tool
+{
+    "id": 3,
+    "name": "Yarrakebas",
+    "location": "Canberra",
+    "cuisine": 3
+}
+
+```
+
+**Check DB**
+```bash
+curl -s -k https://localhost:5001/api/Restaurants/ | python -m json.tool
+[
+    {
+        "id": 1,
+        "name": "Cheap and Cheerful",
+        "location": "Sydney",
+        "cuisine": 1
+    },
+    {
+        "id": 2,
+        "name": "Hot and Spicey",
+        "location": "Melbourne",
+        "cuisine": 3
+    },
+    {
+        "id": 3,
+        "name": "Yarrakebas",
+        "location": "Canberra",
+        "cuisine": 3
+    }
+]
+```
+
+
 ### ASP.NET Core 3
 
 The original version of the code as recorded in the Pluralsight course is with ASP.NET Core 2.1. I've placed this code
