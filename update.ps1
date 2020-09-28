@@ -18,6 +18,9 @@ write-host "`n----------------------------"
 write-host " Updating app"
 write-host "----------------------------`n"
 
+Set-Location -Path 'C:\Apps\OdeToFood\OdeToFood\OdeToFood\'
+
+
 git pull
 
 
@@ -26,7 +29,7 @@ write-host " npm packages installation  "
 write-host "----------------------------`n"
 
 
-Set-Location -Path 'C:\Apps\OdeToFood\OdeToFood\OdeToFood\'
+
 
 npm install
 
