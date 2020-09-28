@@ -26,7 +26,7 @@ write-host " npm packages installation  "
 write-host "----------------------------`n"
 
 
-Set-Location -Path '.\OdeToFood\OdeToFood\'
+Set-Location -Path 'C:\Apps\OdeToFood\OdeToFood\OdeToFood\'
 
 npm install
 

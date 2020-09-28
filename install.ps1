@@ -14,7 +14,7 @@ if ($p) {
   }
 }
 
-Set-Location -Path '.\OdeToFood\OdeToFood\'
+Set-Location -Path 'C:\Apps\OdeToFood\OdeToFood\OdeToFood\'
 
 write-host "`n----------------------------"
 write-host " npm packages installation  "
