@@ -1,14 +1,15 @@
-write-host "`n----------------------------"
-write-host " Stop existing process, if any "
-write-host "----------------------------`n"
+#write-host "`n----------------------------"
+#write-host " Stop existing process, if any "
+#write-host "----------------------------`n"
 
-$p = Get-Process -Name "dotnet"
+#$p = Get-Process -Name "dotnet"
 
-if ($p) {
+#if ($p) {
 
-    $p | Stop-Process -Force
+ 
+ #$p | Stop-Process -Force
 
-}
+#}
 
 write-host "`n----------------------------"
 write-host " Updating app"
